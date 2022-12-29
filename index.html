@@ -10,20 +10,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="root">
-      <h1>React will replace all the stuff inside the root when rendering</h1>
-      <h1>React will replace all the stuff inside the root when rendering</h1>
-      <h1>React will replace all the stuff inside the root when rendering</h1>
-      <h1>React will replace all the stuff inside the root when rendering</h1>
-      <h1>React will replace all the stuff inside the root when rendering</h1>
-    </div>
-    <!--Via Javascript-->
-    <!--<script>-->
-    <!--    const heading = document.createElement('h1');-->
-    <!--    heading.innerHTML = 'Namaste React !';-->
-    <!--    const root = document.getElementById('root');-->
-    <!--    root.appendChild(heading);-->
-    <!--</script>-->
+    <div id="root">Not rendered</div>
     <script
       crossorigin
       src="https://unpkg.com/react@18/umd/react.development.js"
@@ -33,17 +20,31 @@
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
     <script type="module">
-      const heading = React.createElement(
+      const heading1 = React.createElement(
         "h1",
         {
-          id: "heading",
-          class: "someClass",
+          id: "heading1",
         },
-        "Namaste React !"
+        "Heading 1 !"
       );
+      const heading2 = React.createElement(
+        "h2",
+        {
+          id: "heading2",
+        },
+        "Heading 2 !"
+      );
+      const div = React.createElement(
+        "div",
+        {
+          id: "heading2",
+        },
+        [heading1, heading2]
+      );
+
       const root = ReactDOM.createRoot(document.getElementById("root"));
       //passing react element inside the root
-      root.render(heading);
+      root.render(div);
     </script>
   </body>
 </html>
