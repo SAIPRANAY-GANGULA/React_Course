@@ -1,29 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-<div id="root"></div>
-</body>
-<!--Via Javascript-->
-<!--<script>-->
-<!--    const heading = document.createElement('h1');-->
-<!--    heading.innerHTML = 'Namaste React !';-->
-<!--    const root = document.getElementById('root');-->
-<!--    root.appendChild(heading);-->
-<!--</script>-->
-<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-<script type="module">
-    const heading = React.createElement('h1',{},'Namaste React !');
-    console.log(heading);
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    //passing react element inside the root
-    root.render(heading);
-</script>
+  </head>
+  <body>
+    <div id="root">
+      <h1>React will replace all the stuff inside the root when rendering</h1>
+      <h1>React will replace all the stuff inside the root when rendering</h1>
+      <h1>React will replace all the stuff inside the root when rendering</h1>
+      <h1>React will replace all the stuff inside the root when rendering</h1>
+      <h1>React will replace all the stuff inside the root when rendering</h1>
+    </div>
+    <!--Via Javascript-->
+    <!--<script>-->
+    <!--    const heading = document.createElement('h1');-->
+    <!--    heading.innerHTML = 'Namaste React !';-->
+    <!--    const root = document.getElementById('root');-->
+    <!--    root.appendChild(heading);-->
+    <!--</script>-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script type="module">
+      const heading = React.createElement(
+        "h1",
+        {
+          id: "heading",
+          class: "someClass",
+        },
+        "Namaste React !"
+      );
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      //passing react element inside the root
+      root.render(heading);
+    </script>
+  </body>
 </html>
