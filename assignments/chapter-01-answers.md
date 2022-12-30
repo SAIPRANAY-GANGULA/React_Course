@@ -106,8 +106,8 @@ Reference links: [Use the Production Build](https://reactjs.org/docs/optimizing-
 
 ### 8. What is async and defer?
 
-![image info](../assets/images/chapter_01_inception/img_6.png)
-![image info](../assets/images/chapter_01_inception/img_7.png)
+![image info](/assets/images/chapter_01_inception/img_6.png)
+![image info](assets/images/chapter_01_inception/img_7.png)
 
 > Your HTML will display quicker in older browsers if you keep the scripts at the end of the body right before </body>.
 > So, to preserve the load speed in older browsers, you don't want to put them anywhere else.
