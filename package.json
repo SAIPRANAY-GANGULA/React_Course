@@ -2,9 +2,11 @@
   "name": "react_course",
   "version": "1.0.0",
   "description": "This is a react course.",
-  "main": "app.js",
+  "source": "index.html",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",

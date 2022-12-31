@@ -1,8 +1,21 @@
 /*
  *
  * Parcel( Bundlers ) Functionalities
+ *
  * HMR -Hot Module Reloading
  * File Watcher algorithm: C++
+ * Bundling
+ * Minify
+ * Cleaning you code
+ * Dev abd Production Build
+ * Super Fast build algorithms
+ * Image Optimization
+ * Caching while development
+ * Compression
+ * Compatibility with older versions: polyfills
+ * Https on dev
+ * Consistent Hashing Algorithms
+ *
  *
  */
 
