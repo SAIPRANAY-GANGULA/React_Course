@@ -1,3 +1,14 @@
+/*
+ *
+ * Parcel( Bundlers ) Functionalities
+ * HMR -Hot Module Reloading
+ * File Watcher algorithm: C++
+ *
+ */
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const heading1 = React.createElement(
   "h1",
   {
@@ -24,28 +35,28 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 //passing react element inside the root
 root.render(div);
 
-////////////////////////////////////////////////////////////////////////////
-
-const person1 = {
-  name: "person1",
-  print: function () {
-    console.log(this);
-  },
-};
-
-const person2 = {
-  name: "person2",
-  print: () => {
-    console.log(this);
-  },
-};
-
-person1.print(); //person1
-person1.print.call(); //window
-person1.print.call(this); //window
-person1.print.call(person2); //person2
-
-person2.print(); // window
-person2.print.call(); //window
-person2.print.call(this); //window
-person2.print.call(person1); // window
+//////////////////////////////////////////////////////////////////////////////
+//
+// const person1 = {
+//   name: "person1",
+//   print: function () {
+//     console.log(this);
+//   },
+// };
+//
+// const person2 = {
+//   name: "person2",
+//   print: () => {
+//     console.log(this);
+//   },
+// };
+//
+// person1.print(); //person1
+// person1.print.call(); //window
+// person1.print.call(this); //window
+// person1.print.call(person2); //person2
+//
+// person2.print(); // window
+// person2.print.call(); //window
+// person2.print.call(this); //window
+// person2.print.call(person1); // window
