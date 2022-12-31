@@ -2,7 +2,7 @@
  *
  * Parcel( Bundlers ) Functionalities
  *
- * HMR -Hot Module Reloading
+ * HMR - Hot Module Replacement
  * File Watcher algorithm: C++
  * Bundling
  * Minify
@@ -15,8 +15,9 @@
  * Compatibility with older versions: polyfills
  * Https on dev
  * Consistent Hashing Algorithms
+ * Zero Config
  *
- *
+ * Browser list config: https://browserslist.dev/
  */
 
 import React from "react";
