@@ -1,6 +1,6 @@
 ## Chapter 01 - Inception
 
-## Theory -
+## Theory Assignment:
 
 ### 1. What is Emmet?
 
