@@ -1,27 +1,33 @@
 import React from "react";
-import ReactDOM, { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
 
 // Function Component
 const Title = () => (
-  <h1 id="title" key="h2">
-    Namaste React
-  </h1>
+  <img
+    className="logo"
+    alt="logo"
+    src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
+    style={{ width: "60px", height: "70px" }} // inline-styling  in React
+  ></img>
 );
 
 // Composing Components
 const HeaderComponent = () => {
   return (
-    <div>
+    <div className="header">
       <Title />
-      {
-        Title()
-        // We can write any Javascript code here
-      }
-      <h2>Namaste React functional component</h2>
-      <h2>This is a h2 tag</h2>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Cart</li>
+        </ul>
+      </div>
     </div>
   );
 };
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<HeaderComponent />);
