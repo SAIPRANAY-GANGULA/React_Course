@@ -219,13 +219,18 @@ Reference:https://stackoverflow.com/questions/22343224/whats-the-difference-betw
 > https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type
 > https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
 
-### 17. Read about diff bundlers: vite, webpack, parcel?
+### 17. Transitive dependencies?
+
+> Our dependencies which are installed via `package.json` are stored in `node_modules` in-turn have dependencies. These
+> dependencies have their own package.json which are called __Transitive Dependencies__.
+
+### 18. Read about diff bundlers: vite, webpack, parcel?
 
 ## Project Assignment:
 
 In your existing project
 
-1. intialize `npm` into your repo
+1. initialize `npm` into your repo
 2. install `react` and `react-dom`
 3. remove CDN links of react
 4. install parcel
