@@ -18,12 +18,14 @@ const HeaderComponent = () => {
   );
 };
 
-const RestaurantCardComponent = ({ restaurant }) => {
-  const { cloudinaryImageId, name, cuisines, lastMileTravelString } =
-    restaurant;
+const RestaurantCardComponent = ({
+  cloudinaryImageId,
+  name,
+  cuisines,
+  lastMileTravelString,
+}) => {
   return (
     <div className="card">
-      {console.error(restaurant)}
       <img src={IMG_CDN_URL + cloudinaryImageId} alt="restaurant_img" />
       <h2>{name}</h2>
       <h3>{cuisines.join(", ")}</h3>
@@ -35,8 +37,8 @@ const RestaurantCardComponent = ({ restaurant }) => {
 const BodyComponent = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCardComponent restaurant={restaurantList[0].data} />
-      <RestaurantCardComponent restaurant={restaurantList[1].data} />
+      <RestaurantCardComponent {...restaurantList[0].data} />
+      <RestaurantCardComponent {...restaurantList[1].data} />
     </div>
   );
 };
