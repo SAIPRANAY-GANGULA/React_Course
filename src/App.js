@@ -1,21 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// Function Component
-const Title = () => (
-  <img
-    className="logo"
-    alt="logo"
-    src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
-    style={{ width: "60px", height: "70px" }} // inline-styling  in React
-  ></img>
-);
-
-// Composing Components
 const HeaderComponent = () => {
   return (
     <div className="header">
-      <Title />
+      <a className="logo" href="/"></a>
       <div className="nav-items">
         <ul>
           <li>Home</li>
@@ -28,6 +17,24 @@ const HeaderComponent = () => {
   );
 };
 
+const BodyComponent = () => {
+  return <h3>Body</h3>;
+};
+
+const FooterComponent = () => {
+  return <h3>Footer</h3>;
+};
+
+const AppComponent = () => {
+  return (
+    <React.Fragment>
+      <HeaderComponent />
+      <BodyComponent />
+      <FooterComponent />
+    </React.Fragment>
+  );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeaderComponent />);
+root.render(AppComponent());

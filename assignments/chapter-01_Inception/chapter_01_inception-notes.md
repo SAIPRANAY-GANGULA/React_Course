@@ -7,7 +7,7 @@
 
 Browser console:
 
-![image info](../assets/images/chapter_01_inception/img.png)
+![image info](../../assets/images/chapter_01_inception/img.png)
 
 ## Using _props_ on createElement():
 
@@ -22,15 +22,15 @@ const heading = React.createElement(
 );
 ```
 
-![image info](../assets/images/chapter_01_inception/img_1.png)
+![image info](../../assets/images/chapter_01_inception/img_1.png)
 
 ## _render()_ method behavior:
 
-![image info](../assets/images/chapter_01_inception/img_2.png)
+![image info](../../assets/images/chapter_01_inception/img_2.png)
 
 Output:
 
-![image info](../assets/images/chapter_01_inception/img_3.png)
+![image info](../../assets/images/chapter_01_inception/img_3.png)
 
 ## Append multiple children:
 
@@ -46,7 +46,7 @@ const div = React.createElement(
 
 Output:
 
-![image info](../assets/images/chapter_01_inception/img_4.png)
+![image info](../../assets/images/chapter_01_inception/img_4.png)
 
 <br/>
 <br/>
