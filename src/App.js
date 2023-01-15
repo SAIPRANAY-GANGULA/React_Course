@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { IMG_CDN_URL, restaurantList } from "./constants";
 
 const HeaderComponent = () => {
   return (
@@ -17,12 +18,31 @@ const HeaderComponent = () => {
   );
 };
 
-const BodyComponent = () => {
-  return <h3>Body</h3>;
+const RestaurantCardComponent = (props) => {
+  return (
+    <div className="card">
+      {console.error(props)}
+      <img
+        src={IMG_CDN_URL + props.restaurant.cloudinaryImageId}
+        alt="restaurant_img"
+      />
+      <h2>{props.restaurant.name}</h2>
+      <h3>{props.restaurant.cuisines.join(", ")}</h3>
+      <h4>{props.restaurant.lastMileTravelString} minutes</h4>
+    </div>
+  );
 };
 
-const FooterComponent = () => {
-  return <h3>Footer</h3>;
+const BodyComponent = () => {
+  return (
+    <div className="restaurant-list">
+      <RestaurantCardComponent
+        restaurant={restaurantList[0].data}
+        list={restaurantList}
+      />
+      <RestaurantCardComponent restaurant={restaurantList[1].data} />
+    </div>
+  );
 };
 
 const AppComponent = () => {
@@ -30,7 +50,6 @@ const AppComponent = () => {
     <React.Fragment>
       <HeaderComponent />
       <BodyComponent />
-      <FooterComponent />
     </React.Fragment>
   );
 };
