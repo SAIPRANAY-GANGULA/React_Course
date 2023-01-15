@@ -37,8 +37,12 @@ const RestaurantCardComponent = ({
 const BodyComponent = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCardComponent {...restaurantList[0].data} />
-      <RestaurantCardComponent {...restaurantList[1].data} />
+      {restaurantList.map((restaurant) => (
+        <RestaurantCardComponent
+          {...restaurant.data}
+          key={restaurant.data.id}
+        />
+      ))}
     </div>
   );
 };
