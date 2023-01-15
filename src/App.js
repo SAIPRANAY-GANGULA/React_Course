@@ -18,17 +18,16 @@ const HeaderComponent = () => {
   );
 };
 
-const RestaurantCardComponent = (props) => {
+const RestaurantCardComponent = ({ restaurant }) => {
+  const { cloudinaryImageId, name, cuisines, lastMileTravelString } =
+    restaurant;
   return (
     <div className="card">
-      {console.error(props)}
-      <img
-        src={IMG_CDN_URL + props.restaurant.cloudinaryImageId}
-        alt="restaurant_img"
-      />
-      <h2>{props.restaurant.name}</h2>
-      <h3>{props.restaurant.cuisines.join(", ")}</h3>
-      <h4>{props.restaurant.lastMileTravelString} minutes</h4>
+      {console.error(restaurant)}
+      <img src={IMG_CDN_URL + cloudinaryImageId} alt="restaurant_img" />
+      <h2>{name}</h2>
+      <h3>{cuisines.join(", ")}</h3>
+      <h4>{lastMileTravelString} minutes</h4>
     </div>
   );
 };
@@ -36,10 +35,7 @@ const RestaurantCardComponent = (props) => {
 const BodyComponent = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCardComponent
-        restaurant={restaurantList[0].data}
-        list={restaurantList}
-      />
+      <RestaurantCardComponent restaurant={restaurantList[0].data} />
       <RestaurantCardComponent restaurant={restaurantList[1].data} />
     </div>
   );
