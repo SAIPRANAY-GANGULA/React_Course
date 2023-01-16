@@ -64,6 +64,7 @@
     display: flex;
     box-shadow: 0 2px 8px #1c1c1c14;
     padding: 1rem;
+    margin: auto;
 }
 
 .search-input {
