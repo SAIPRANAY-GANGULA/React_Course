@@ -1,3 +1,5 @@
+import "./Header.css";
+
 const HeaderComponent = () => {
   return (
     <div className="header">

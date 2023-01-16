@@ -2,6 +2,7 @@ import { restaurantList as restroList } from "../constants"; /* Imported using N
 import * as Restro from "./RestaurantCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react"; /* Imported using import * as namespace  */
+import "./Body.css";
 
 const BodyComponent = () => {
   const [searchText, setSearchText] = useState("");
