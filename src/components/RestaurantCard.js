@@ -37,7 +37,7 @@ export const RestaurantCardComponent = ({
 
             <div className="res-detail">
               <div className="res-name">{name}</div>
-              <div className="res-cuisines">{cuisines.join(", ")}</div>
+              <div className="res-cuisines">{cuisines?.join(", ")}</div>
             </div>
             <div className="res-others">
               <div
