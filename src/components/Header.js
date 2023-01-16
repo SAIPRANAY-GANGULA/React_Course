@@ -4,7 +4,14 @@ const HeaderComponent = () => {
   return (
     <div className="header">
       <a className="logo" href="/"></a>
-      <FontAwesomeIcon icon="search" />
+      <div className="search">
+        <FontAwesomeIcon icon="search" />
+        <input
+          placeholder="Search for restaurant, cuisine or a dish"
+          className="search-input"
+          value=""
+        ></input>
+      </div>
       <div className="nav-items">
         <ul>
           <li>Home</li>
