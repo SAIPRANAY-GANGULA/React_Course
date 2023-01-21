@@ -3,18 +3,18 @@ import ReactDOM from "react-dom/client";
 import NewHeaderComponent from "./components/Header"; /* Imported using Default Import Map */
 import BodyComponent from "./components/Body"; /* Imported using default export */
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import About from "./components/About";
 import ErrorRoute from "./components/ErrorRoute";
 
-library.add(faSearch);
+library.add(faSearch, faShoppingCart);
 
 const AppComponent = () => {
   return (
     <React.Fragment>
       <NewHeaderComponent />
-      <BodyComponent />
+      <Outlet />
     </React.Fragment>
   );
 };
@@ -24,10 +24,16 @@ const appLayout = createBrowserRouter([
     path: "/",
     element: AppComponent(),
     errorElement: <ErrorRoute />,
-  },
-  {
-    path: "/about",
-    element: <About />,
+    children: [
+      {
+        path: "",
+        element: <BodyComponent />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+    ],
   },
 ]);
 

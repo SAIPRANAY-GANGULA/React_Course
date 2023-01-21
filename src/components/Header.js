@@ -1,17 +1,22 @@
 import "./Header.css";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HeaderComponent = () => {
   return (
     <div className="header">
-      <a className="logo" href="/"></a>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
+      <Link className="logo" to="/"></Link>
+      <ul className="flex justify-center items-center">
+        <Link to="/">
+          <li className="mx-2">Home</li>
+        </Link>
+        <Link to="/about">
+          <li className="mx-2">About</li>
+        </Link>
+        <Link to="/">
+          <FontAwesomeIcon className="mx-2" icon="shopping-cart" />
+        </Link>
+      </ul>
     </div>
   );
 };
