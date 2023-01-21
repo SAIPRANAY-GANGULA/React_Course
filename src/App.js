@@ -7,6 +7,7 @@ import { faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import About from "./components/About";
 import ErrorRoute from "./components/ErrorRoute";
+import { RestaurantDetail } from "./components/RestaurantDetail";
 
 library.add(faSearch, faShoppingCart);
 
@@ -32,6 +33,10 @@ const appLayout = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantDetail />,
       },
     ],
   },

@@ -6,6 +6,7 @@ import {
 } from "react"; /* Imported using import * as namespace  */
 import "./RestaurantList.css";
 import Shimmer from "./Shimmer";
+import { RESTAURANT_LIST_API } from "../constants";
 
 const BodyComponent = () => {
   const [searchText, setSearchText] = useState("");
@@ -20,12 +21,14 @@ const BodyComponent = () => {
   }, [searchText]);
 
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.429888959888363&lng=78.457962423563&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
-    );
-    const json = await data.json();
-    const restaurantList = json?.data?.cards;
-    filterRestaurants(searchText, restaurantList);
+    try {
+      const data = await fetch(RESTAURANT_LIST_API());
+      const json = await data.json();
+      const restaurantList = json?.data?.cards;
+      filterRestaurants(searchText, restaurantList);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   function filterRestaurants(searchText, restaurantsList) {

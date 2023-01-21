@@ -1,6 +1,7 @@
 import React from "react";
 import { IMG_CDN_URL } from "../constants";
 import "./RestaurantCard.css";
+import { Link } from "react-router-dom";
 
 export const RestaurantCardComponent = ({
   name,
@@ -10,11 +11,11 @@ export const RestaurantCardComponent = ({
   slaString,
   costForTwoString,
   ribbon,
-  aggregatedDiscountInfo,
+  id,
 }) => {
   return (
     <div className="card-position">
-      <a className="card-item">
+      <Link className="card-item" to={"/restaurant/" + id}>
         <div className="inner-card">
           <div className="card-width">
             <div className="restaurant-img">
@@ -55,19 +56,19 @@ export const RestaurantCardComponent = ({
               <div>•</div>
               <div className="for-ppl">{costForTwoString}</div>
             </div>
-            {aggregatedDiscountInfo ? (
-              <div className="offers">
-                <span className="icon-offer-filled icon"></span>
-                <span className="text">
-                  {aggregatedDiscountInfo?.shortDescriptionList[0].meta}
-                </span>
-              </div>
-            ) : (
-              ""
-            )}
+            {/*{aggregatedDiscountInfo ? (*/}
+            {/*  <div className="offers">*/}
+            {/*    <span className="icon-offer-filled icon"></span>*/}
+            {/*    <span className="text">*/}
+            {/*      {aggregatedDiscountInfo?.shortDescriptionList[0].meta}*/}
+            {/*    </span>*/}
+            {/*  </div>*/}
+            {/*) : (*/}
+            {/*  ""*/}
+            {/*)}*/}
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };
