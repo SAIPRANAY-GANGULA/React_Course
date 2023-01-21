@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import NewHeaderComponent from "./components/Header"; /* Imported using Default Import Map */
-import BodyComponent from "./components/Body"; /* Imported using default export */
+import RestaurantList from "./components/RestaurantList"; /* Imported using default export */
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
@@ -27,7 +27,7 @@ const appLayout = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <BodyComponent />,
+        element: <RestaurantList />,
       },
       {
         path: "/about",

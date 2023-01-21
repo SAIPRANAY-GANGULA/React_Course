@@ -4,7 +4,7 @@ import {
   useEffect,
   useState,
 } from "react"; /* Imported using import * as namespace  */
-import "./Body.css";
+import "./RestaurantList.css";
 import Shimmer from "./Shimmer";
 
 const BodyComponent = () => {

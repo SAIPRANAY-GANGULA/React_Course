@@ -16,7 +16,7 @@ allowing other modules to use it by importing.
   Each component file can have only one export default. While importing just the Component name can be used (without
   any {})
 
-  Example : Check `Body.js` file inside components in this chapter. Body component is exported
+  Example : Check `RestaurantList.js` file inside components in this chapter. Body component is exported
   using `export default BodyComponent;`
 
   In the `App.js` file, while importing `import BodyComponent from "./components/Body";`
@@ -29,7 +29,7 @@ allowing other modules to use it by importing.
   Example : Check `constants.js` file inside components in this chapter. `restaurantList` is exported as named
   export using `export const restaurantList = [];`
 
-  In the `Body.js` file, while importing
+  In the `RestaurantList.js` file, while importing
   use `import { restaurantList as restroList } from "../constants";`.
   `restroList.map((restaurant) => ()`
 
@@ -43,9 +43,9 @@ allowing other modules to use it by importing.
   If all the components in the module are exported then using import * as namespace can be used to import all those
   components.
 
-  Example : Check `Body.js` file inside components in this chapter. There are three components exported.
+  Example : Check `RestaurantList.js` file inside components in this chapter. There are three components exported.
 
-  In `Body.js`, while importing use `import * as Restro from "./RestaurantCard";` .
+  In `RestaurantList.js`, while importing use `import * as Restro from "./RestaurantCard";` .
   `<Restro.RestaurantCardComponent>` is used to render Restaurant component.
 
 ## 2. What is the importance of config.js file ?
