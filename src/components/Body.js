@@ -53,7 +53,7 @@ const BodyComponent = () => {
       </div>
       <div className="restaurant-list">
         {!restaurants.length
-          ? Array(15)
+          ? Array(16)
               .fill("")
               .map((v, i) => <Shimmer key={i} />)
           : restaurants.map((restaurant) => {

@@ -4,6 +4,9 @@ import NewHeaderComponent from "./components/Header"; /* Imported using Default 
 import BodyComponent from "./components/Body"; /* Imported using default export */
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import About from "./components/About";
+import ErrorRoute from "./components/ErrorRoute";
 
 library.add(faSearch);
 
@@ -16,6 +19,18 @@ const AppComponent = () => {
   );
 };
 
+const appLayout = createBrowserRouter([
+  {
+    path: "/",
+    element: AppComponent(),
+    errorElement: <ErrorRoute />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(AppComponent());
+root.render(<RouterProvider router={appLayout} />);
