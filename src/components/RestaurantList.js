@@ -54,21 +54,27 @@ const BodyComponent = () => {
           }}
         ></input>
       </div>
-      <div className="restaurant-list">
-        {!restaurants.length
-          ? Array(16)
-              .fill("")
-              .map((v, i) => <Shimmer key={i} />)
-          : restaurants.map((restaurant) => {
-              const restaurantData = restaurant?.data?.data;
-              return (
-                <Restro.RestaurantCardComponent
-                  {...restaurantData}
-                  key={restaurantData?.uuid}
-                />
-              );
-            })}
-      </div>
+      {!restaurants.length && searchText.trim().length ? (
+        <div className="center-content | flex justify-center items-center h-96">
+          <p className="text-2xl">No match found for "{searchText}"</p>
+        </div>
+      ) : (
+        <div className="restaurant-list">
+          {!restaurants.length && !searchText.trim().length
+            ? Array(16)
+                .fill("")
+                .map((v, i) => <Shimmer key={i} />)
+            : restaurants.map((restaurant) => {
+                const restaurantData = restaurant?.data?.data;
+                return (
+                  <Restro.RestaurantCardComponent
+                    {...restaurantData}
+                    key={restaurantData?.uuid}
+                  />
+                );
+              })}
+        </div>
+      )}
     </>
   );
 };
