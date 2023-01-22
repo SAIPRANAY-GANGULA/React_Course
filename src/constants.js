@@ -9,12 +9,6 @@ export const RESTAURANT_LIST_API = () =>
   `&pageType=SEE_ALL` +
   `&page_type=DESKTOP_SEE_ALL_LISTING`;
 
-export const RESTAURANT_DETAIL = (id) =>
-  `https://www.swiggy.com/dapi/menu/v4/full?` +
-  `lat=17.429888959888363&lng=78.457962423563` +
-  `&menuId=` +
-  id;
-
 export const restaurantList = [
   {
     type: "restaurant",
