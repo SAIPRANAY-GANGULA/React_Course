@@ -10,7 +10,7 @@ import ErrorRoute from "./components/ErrorRoute";
 import { RestaurantDetail } from "./components/RestaurantDetail";
 import Profile from "./components/Profile";
 import Instamart from "./components/Instamart";
-import SearchInputContext from "./components/SearchInputContext";
+import SearchInputContext from "./utils/SearchInputContext";
 
 library.add(faSearch, faShoppingCart);
 

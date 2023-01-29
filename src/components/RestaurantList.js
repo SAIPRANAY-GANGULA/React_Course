@@ -7,7 +7,7 @@ import {
 import "./RestaurantList.css";
 import Shimmer from "./Shimmer";
 import { RESTAURANT_LIST_API } from "../constants";
-import SearchInputContext from "./SearchInputContext";
+import SearchInputContext from "../utils/SearchInputContext";
 
 const BodyComponent = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -42,7 +42,7 @@ const BodyComponent = () => {
   }
 
   return (
-    <>
+    <div className="relative top-20">
       {!restaurants.length && searchText.trim().length ? (
         <div className="center-content | flex justify-center items-center h-96">
           <p className="text-2xl">No match found for "{searchText}"</p>
@@ -64,7 +64,7 @@ const BodyComponent = () => {
               })}
         </div>
       )}
-    </>
+    </div>
   );
 };
 
