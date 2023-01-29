@@ -8,7 +8,7 @@ const HeaderComponent = () => {
   const { searchText, setSearchText } = useContext(SearchInputContext);
 
   return (
-    <div className="header-container-shadow | fixed w-screen z-10 bg-white">
+    <div className="header-container-shadow | fixed w-screen z-10 bg-white h-20">
       <div className="header">
         <Link className="logo" to="/"></Link>
         <div className="search">

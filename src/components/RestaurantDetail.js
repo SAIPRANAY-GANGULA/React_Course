@@ -39,7 +39,7 @@ export const RestaurantDetail = () => {
   const restaurant = useRestaurantDetail(id);
 
   return (
-    <div className="w-screen h-60 bg-slate-800 my-10">
+    <div className="w-screen h-60 bg-slate-800 relative top-20">
       {!restaurant ? (
         <ShimmerRestaurantDetail />
       ) : (

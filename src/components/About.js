@@ -17,7 +17,7 @@ class About extends React.Component {
     console.warn("Parent-render");
     return (
       <>
-        <div className="flex flex-col items-center justify-evenly m-2 h-screen max-h-[80vh]">
+        <div className="flex flex-col items-center justify-evenly h-screen max-h-[80vh] relative top-20">
           <h1 className="text-3xl">About Us Page!</h1>
           <ProfileClass props="Child1" />
           {/*<ProfileClass props="Child2" />*/}
