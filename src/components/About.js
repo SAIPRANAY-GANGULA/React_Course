@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Profile from "./Profile";
 import ProfileClass from "./ProfileClass";
 import React from "react";
+import SearchInputContext from "../utils/SearchInputContext";
 
 class About extends React.Component {
   constructor(props) {
@@ -22,6 +23,12 @@ class About extends React.Component {
           <ProfileClass props="Child1" />
           {/*<ProfileClass props="Child2" />*/}
           <Profile props="props" />
+
+          {/*{Way to Access Context in Class based components}*/}
+          <SearchInputContext.Consumer>
+            {(value) => console.warn(value)}
+          </SearchInputContext.Consumer>
+
           <Outlet />
         </div>
       </>
