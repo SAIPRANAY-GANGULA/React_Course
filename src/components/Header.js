@@ -8,16 +8,16 @@ const HeaderComponent = () => {
       <Link className="logo" to="/"></Link>
       <ul className="flex justify-center items-center">
         <Link to="/">
-          <li className="mx-2 hover:text-orange-600">Home</li>
+          <li className="link">Home</li>
         </Link>
         <Link to="/about">
-          <li className="mx-2 hover:text-orange-600">About</li>
+          <li className="link">About</li>
+        </Link>
+        <Link to="/instamart">
+          <li className="link">Instamart</li>
         </Link>
         <Link to="/">
-          <FontAwesomeIcon
-            className="mx-2 hover:text-orange-600"
-            icon="shopping-cart"
-          />
+          <FontAwesomeIcon className="link" icon="shopping-cart" />
         </Link>
       </ul>
     </div>

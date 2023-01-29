@@ -9,6 +9,7 @@ import About from "./components/About";
 import ErrorRoute from "./components/ErrorRoute";
 import { RestaurantDetail } from "./components/RestaurantDetail";
 import Profile from "./components/Profile";
+import Instamart from "./components/Instamart";
 
 library.add(faSearch, faShoppingCart);
 
@@ -44,6 +45,10 @@ const appLayout = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestaurantDetail />,
+      },
+      {
+        path: "/instamart",
+        element: <Instamart />,
       },
     ],
   },

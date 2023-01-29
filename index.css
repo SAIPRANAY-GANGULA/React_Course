@@ -38,3 +38,11 @@
         background-position: -150% 0;
     }
 }
+
+.link {
+    @apply mx-2 hover:text-orange-600
+}
+
+.primary-btn {
+    @apply bg-orange-500 hover:bg-orange-600 text-white rounded-md px-2
+}
