@@ -1,16 +1,17 @@
 import * as Restro from "./RestaurantCard";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  useContext,
   useEffect,
   useState,
 } from "react"; /* Imported using import * as namespace  */
 import "./RestaurantList.css";
 import Shimmer from "./Shimmer";
 import { RESTAURANT_LIST_API } from "../constants";
+import SearchInputContext from "./SearchInputContext";
 
 const BodyComponent = () => {
-  const [searchText, setSearchText] = useState("");
   const [restaurants, setRestaurants] = useState([]);
+  const { searchText } = useContext(SearchInputContext);
 
   useEffect(() => {
     const getData = setTimeout(() => {
@@ -42,18 +43,6 @@ const BodyComponent = () => {
 
   return (
     <>
-      <div className="search">
-        <FontAwesomeIcon icon="search" />
-        <input
-          type="text"
-          placeholder="Search for restaurant, cuisine or a dish"
-          className="search-input"
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-        ></input>
-      </div>
       {!restaurants.length && searchText.trim().length ? (
         <div className="center-content | flex justify-center items-center h-96">
           <p className="text-2xl">No match found for "{searchText}"</p>

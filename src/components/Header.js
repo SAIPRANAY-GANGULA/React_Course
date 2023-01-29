@@ -1,11 +1,27 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext } from "react";
+import SearchInputContext from "./SearchInputContext";
 
 const HeaderComponent = () => {
+  const { searchText, setSearchText } = useContext(SearchInputContext);
+
   return (
     <div className="header">
       <Link className="logo" to="/"></Link>
+      <div className="search">
+        <FontAwesomeIcon icon="search" />
+        <input
+          type="text"
+          placeholder="Search for restaurant, cuisine or a dish"
+          className="search-input"
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+        ></input>
+      </div>
       <ul className="flex justify-center items-center">
         <Link to="/">
           <li className="link">Home</li>

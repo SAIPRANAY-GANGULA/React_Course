@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import NewHeaderComponent from "./components/Header"; /* Imported using Default Import Map */
 import RestaurantList from "./components/RestaurantList"; /* Imported using default export */
@@ -10,22 +10,32 @@ import ErrorRoute from "./components/ErrorRoute";
 import { RestaurantDetail } from "./components/RestaurantDetail";
 import Profile from "./components/Profile";
 import Instamart from "./components/Instamart";
+import SearchInputContext from "./components/SearchInputContext";
 
 library.add(faSearch, faShoppingCart);
 
 const AppComponent = () => {
+  const [searchText, setSearchText] = useState("");
+
   return (
-    <React.Fragment>
-      <NewHeaderComponent />
-      <Outlet />
-    </React.Fragment>
+    <SearchInputContext.Provider
+      value={{
+        searchText: searchText,
+        setSearchText: setSearchText,
+      }}
+    >
+      <React.Fragment>
+        <NewHeaderComponent />
+        <Outlet />
+      </React.Fragment>
+    </SearchInputContext.Provider>
   );
 };
 
 const appLayout = createBrowserRouter([
   {
     path: "/",
-    element: AppComponent(),
+    element: <AppComponent />,
     errorElement: <ErrorRoute />,
     children: [
       {

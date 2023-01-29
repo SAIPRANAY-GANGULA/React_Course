@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-const Section = ({ title, description, isVisible, setVisible }) => {
+const Section = ({ title, description, isVisible, onButtonToggle }) => {
   return (
     <div className="border border-black p-2 my-2 | flex flex-col">
       <div className="flex justify-between px-2">
         <p className="text-lg font-bold">{title}</p>
-        <button className="primary-btn" onClick={setVisible}>
+        <button className="primary-btn" onClick={() => onButtonToggle()}>
           {isVisible ? "Hide" : "Show"}
         </button>
       </div>
@@ -21,18 +21,18 @@ const Instamart = () => {
         title="About"
         description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate."
         isVisible={sectionVisible === "about"}
-        setVisible={() =>
+        onButtonToggle={() => {
           sectionVisible === "about"
             ? setSectionVisible("")
-            : setSectionVisible("about")
-        }
+            : setSectionVisible("about");
+        }}
       />
 
       <Section
         title="Careers"
         description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate."
         isVisible={sectionVisible === "careers"}
-        setVisible={() =>
+        onButtonToggle={() =>
           sectionVisible === "careers"
             ? setSectionVisible("")
             : setSectionVisible("careers")
@@ -43,7 +43,7 @@ const Instamart = () => {
         title="Team"
         description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate."
         isVisible={sectionVisible === "team"}
-        setVisible={() =>
+        onButtonToggle={() =>
           sectionVisible === "team"
             ? setSectionVisible("")
             : setSectionVisible("team")
