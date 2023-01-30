@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import NewHeaderComponent from "./components/Header"; /* Imported using Default Import Map */
 import RestaurantList from "./components/RestaurantList"; /* Imported using default export */
@@ -9,10 +9,11 @@ import About from "./components/About";
 import ErrorRoute from "./components/ErrorRoute";
 import { RestaurantDetail } from "./components/RestaurantDetail";
 import Profile from "./components/Profile";
-import Instamart from "./components/Instamart";
 import SearchInputContext from "./utils/SearchInputContext";
 
 library.add(faSearch, faShoppingCart);
+
+const Instamart = lazy(() => import("./components/Instamart"));
 
 const AppComponent = () => {
   const [searchText, setSearchText] = useState("");
@@ -58,7 +59,17 @@ const appLayout = createBrowserRouter([
       },
       {
         path: "/instamart",
-        element: <Instamart />,
+        element: (
+          <Suspense
+            fallback={
+              <h1 className="flex justify-center items-center h-96">
+                Shimmer UI !!
+              </h1>
+            }
+          >
+            <Instamart />
+          </Suspense>
+        ),
       },
     ],
   },

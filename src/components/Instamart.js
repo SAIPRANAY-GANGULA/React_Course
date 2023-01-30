@@ -1,5 +1,12 @@
 import { useState } from "react";
 
+// Chunking
+// Lazy loading
+// On-Demand loading
+// Code splitting
+// Dynamic bundling
+// Dynamic import
+
 const Section = ({ title, description, isVisible, onButtonToggle }) => {
   return (
     <div className="border border-black p-2 mb-2 flex flex-col">
@@ -13,10 +20,11 @@ const Section = ({ title, description, isVisible, onButtonToggle }) => {
     </div>
   );
 };
+
 const Instamart = () => {
   const [sectionVisible, setSectionVisible] = useState("about");
   return (
-    <div className="center-content | relative top-20">
+    <div className="center-content | relative top-24">
       <Section
         title="About"
         description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, cumque eos maiores necessitatibus odio quam quisquam similique veniam voluptas voluptate."
