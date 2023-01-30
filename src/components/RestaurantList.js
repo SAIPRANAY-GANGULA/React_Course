@@ -1,7 +1,7 @@
 import * as Restro from "./RestaurantCard";
 import { useContext } from "react"; /* Imported using import * as namespace  */
 import "./RestaurantList.css";
-import Shimmer from "./Shimmer";
+import ShimmerCard from "./ShimmerCard";
 import SearchInputContext from "../utils/SearchInputContext";
 import useRestaurantList from "../utils/useRestaurantList";
 import useOnline from "../utils/useOnline";
@@ -30,7 +30,7 @@ const BodyComponent = () => {
           {!restaurants.length && !searchText.trim().length
             ? Array(16)
                 .fill("")
-                .map((v, i) => <Shimmer key={i} />)
+                .map((v, i) => <ShimmerCard key={i} />)
             : restaurants.map((restaurant) => {
                 const restaurantData = restaurant?.data?.data;
                 return (

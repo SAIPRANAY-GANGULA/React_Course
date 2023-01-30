@@ -11,6 +11,7 @@ const useOnline = () => {
     window.addEventListener("offline", handleOffline);
 
     return () => {
+      console.error("Unmounted use Online");
       window.removeEventListener("online", handleOnline);
       window.removeEventListener("offline", handleOffline);
     };

@@ -1,6 +1,6 @@
-import "./Shimmer.css";
+import "./ShimmerCard.css";
 
-const Shimmer = () => {
+const ShimmerCard = () => {
   return (
     <div className="card">
       <div className="card-header animated-bg" id="header">
@@ -18,4 +18,4 @@ const Shimmer = () => {
   );
 };
 
-export default Shimmer;
+export default ShimmerCard;
