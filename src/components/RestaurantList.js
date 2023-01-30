@@ -4,10 +4,20 @@ import "./RestaurantList.css";
 import Shimmer from "./Shimmer";
 import SearchInputContext from "../utils/SearchInputContext";
 import useRestaurantList from "../utils/useRestaurantList";
+import useOnline from "../utils/useOnline";
 
 const BodyComponent = () => {
   const { searchText } = useContext(SearchInputContext);
   const restaurants = useRestaurantList();
+
+  const isOnline = useOnline();
+  if (!isOnline) {
+    return (
+      <h1 className="h-screen flex justify-center items-center text-2xl">
+        🛑 Offline! Please check your internet connection!
+      </h1>
+    );
+  }
 
   return (
     <div className="relative top-20">
